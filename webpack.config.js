@@ -19,6 +19,17 @@ module.exports = {
         new webpack.NoEmitOnErrorsPlugin()
     ],
     module: {
+        rules: [
+            {
+                test: /\.js$/,
+                loaders: ['eslint-loader'],
+                exclude: /node_modules/,
+                include: [
+                    path.resolve(__dirname, "src"),
+                ],
+            }
+        ],
+
         loaders: [
             {
                 loaders: ['react-hot-loader', 'babel-loader'],
